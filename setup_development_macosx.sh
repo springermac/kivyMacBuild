@@ -26,7 +26,7 @@ echo "----Checking for virtualenv----"
 command -v virtualenv 2>&1 >/dev/null
 if [ $? != 0 ]; then
     echo "virtualenv not available, you should be prompted for install:"
-    sudo pip install virtualenv --system-site-packages
+    sudo pip install virtualenv
     if [ $? != 0 ]; then
         echo "FAILURE: virtualenv failed installing"
         WILL_FAIL=12
@@ -105,7 +105,7 @@ echo "--------Setting up pyinstaller----"
 python -c"import pyinstaller" 2>&1 >/dev/null
 if [ $? != 0 ]; then
     echo "pyinstaller not available adding"
-    pip install -U pyinstaller==2.1
+    pip install -U pyinstaller==3.0
     if [ $? != 0 ]; then
         echo "FAILURE: pyinstaller failed installing"
         WILL_FAIL=1
